@@ -26,4 +26,17 @@ int main()
 	Mydblinkedlist.InsertAfter(N1, 80);
 	cout << "\nAfter inserting 80: ";
 	Mydblinkedlist.printList();
+	Mydblinkedlist.InsertAtEnd(40);
+	cout << "\nAfter inserting 40 at end: ";
+	Mydblinkedlist.printList();
+	clsDbLinkedList<int>::Noded* N2 = Mydblinkedlist.Find(5);
+	Mydblinkedlist.DeleteNode(5);
+	cout << "\nAfter deleting 5 : ";
+	Mydblinkedlist.printList();
+	Mydblinkedlist.DeleteFirstNode();
+	cout << "\nAfter deleting First Node  : ";
+	Mydblinkedlist.printList();
+	Mydblinkedlist.DeleteLastNode();
+	cout << "\nAfter deleting Last Node  : ";
+	Mydblinkedlist.printList();
 }
