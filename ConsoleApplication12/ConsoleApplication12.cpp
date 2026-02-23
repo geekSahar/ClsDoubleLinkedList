@@ -6,15 +6,38 @@
 using namespace std;
 int main()
 {
+	
 	clsDbLinkedList<int> Mydblinkedlist;
+	if (Mydblinkedlist.IsEmpty()) {
+		cout << "\nList is empty";
+	}
+	else{
+		cout << "\nList isn't empty";
+	}
 	Mydblinkedlist.InsertAtBeginning(5);
 	Mydblinkedlist.InsertAtBeginning(4);
 	Mydblinkedlist.InsertAtBeginning(3);
 	Mydblinkedlist.InsertAtBeginning(2);
 	Mydblinkedlist.InsertAtBeginning(1);
-
-
-	cout << "Linked List: ";
+	
+	cout << "\nNumber of items: " << Mydblinkedlist.Size();
+	if (Mydblinkedlist.IsEmpty()) {
+		cout << "\nList is empty";
+	}
+	else {
+		cout << "\nList isn't empty";
+	}
+	
+	/*cout << "\nNumber of items: " << Mydblinkedlist.Size();
+	clsDbLinkedList<int>::Noded* N1 = Mydblinkedlist.GetNode(2);
+	cout << "ff" << Mydblinkedlist.GetItem(3);
+	Mydblinkedlist.UpdateItem(3,300);
+	Mydblinkedlist.printList();
+	Mydblinkedlist.InsertAfter(2, 200);
+	Mydblinkedlist.printList();*/
+	Mydblinkedlist.reverse();
+	Mydblinkedlist.printList();
+	/*cout << "\nLinked List: ";
 	Mydblinkedlist.printList();
 	clsDbLinkedList<int>::Noded * N1 = Mydblinkedlist.Find(2);
 	if (N1 != NULL){
@@ -39,4 +62,5 @@ int main()
 	Mydblinkedlist.DeleteLastNode();
 	cout << "\nAfter deleting Last Node  : ";
 	Mydblinkedlist.printList();
+	cout << "\nNumber of items: " << Mydblinkedlist.Size();*/
 }
