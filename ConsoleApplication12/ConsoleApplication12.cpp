@@ -1,7 +1,7 @@
 // ConsoleApplication12.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #include <iostream>
-#include "clsDbLinkedList.h";
+
 #include "clsMyQueue.h";
 using namespace std;
 int main()
@@ -66,7 +66,24 @@ int main()
 	MyQueue.Pop();
 	cout << "\nAfter pop: ";
 	MyQueue.Print();
-
-
+	cout << "\nItem(2): " << MyQueue.GetItem(2);
+	MyQueue.Reverse();
+	cout << "\nAfter revrsing: ";
+	MyQueue.Print();
+	MyQueue.UpdateItem(2, 200);
+	cout << "\nAfter Updating: ";
+	MyQueue.Print();
+	MyQueue.InsertAfter(3, 90);
+	cout << "\nAfter inserting: ";
+	MyQueue.Print();
+	MyQueue.InsertAtFront(97);
+	cout << "\nAfter inserting at front: ";
+	MyQueue.Print();
+	MyQueue.InsertAtBack(500);
+	cout << "\nAfter inserting at back: ";
+	MyQueue.Print();
+	MyQueue.Clear();
+	cout << "\nAfter clear: ";
+	MyQueue.Print();
 }
 

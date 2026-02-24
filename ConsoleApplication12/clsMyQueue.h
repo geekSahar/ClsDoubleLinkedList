@@ -27,6 +27,27 @@ public:
 	void Pop() {
 		_list.DeleteFirstNode();
 	}
+	T GetItem(T n) {
+		return _list.GetItem(n);
+	}
+	void InsertAtFront(T v) {
+		_list.InsertAtBeginning(v);
+	}
+	void InsertAtBack(T v) {
+		_list.InsertAtEnd(v);
+	}
+	void Clear() {
+		_list.Clear();
+	}
+	void UpdateItem(int i, T n) {
+		_list.UpdateItem(i, n);
+	}
+	bool InsertAfter(int i, T v) {
+		return _list.InsertAfter(i, v);
+	}
+	void Reverse() {
+		_list.Reverse();
+	}
 	bool IsEmpty() {
 		return _list.IsEmpty();
 	}
