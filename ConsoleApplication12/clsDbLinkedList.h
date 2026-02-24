@@ -5,7 +5,7 @@ template<class T>
 class clsDbLinkedList
 {
 protected:
-    int _Size;
+    int _Size=0;
 public:
   
    class Noded {
@@ -60,6 +60,7 @@ public:
 
         if (head == NULL) {
             head = new_node;
+            _Size++;
             return;
         }
         Noded* tmp = head;
@@ -82,7 +83,7 @@ public:
         }
         return tmp;
     }
-    void reverse() {
+    void Reverse() {
         int i = 0;
         if (head == NULL)
             return;
@@ -114,7 +115,7 @@ public:
         else {
             return false;
         }
-
+       
     }
     T GetItem(int n) {
        
@@ -145,7 +146,9 @@ public:
         }
         if (cur->value == v) {
             head = cur->next;
+            _Size--;
             delete cur;
+            return;
 
         }
         while (cur->next != NULL && cur->value != v) {
@@ -167,6 +170,7 @@ public:
             return;
         if (head->next == NULL) {
             delete head;
+            _Size--;
             head = NULL;
             return;
         }
@@ -210,7 +214,7 @@ public:
        }
        return;
    }
-    void printList() {
+    void PrintList() {
         Noded* tmp = head;
         while (tmp != NULL) {
             cout << tmp->value << " ";

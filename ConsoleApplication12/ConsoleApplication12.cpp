@@ -1,8 +1,8 @@
 // ConsoleApplication12.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include <iostream>
 #include "clsDbLinkedList.h";
+#include "clsMyQueue.h";
 using namespace std;
 int main()
 {
@@ -28,39 +28,45 @@ int main()
 		cout << "\nList isn't empty";
 	}
 	
-	/*cout << "\nNumber of items: " << Mydblinkedlist.Size();
+	cout << "\nNumber of items: " << Mydblinkedlist.Size();
 	clsDbLinkedList<int>::Noded* N1 = Mydblinkedlist.GetNode(2);
-	cout << "ff" << Mydblinkedlist.GetItem(3);
+
 	Mydblinkedlist.UpdateItem(3,300);
-	Mydblinkedlist.printList();
+	cout << "\nAfter updating: ";
+	Mydblinkedlist.PrintList();
+
 	Mydblinkedlist.InsertAfter(2, 200);
-	Mydblinkedlist.printList();*/
-	Mydblinkedlist.reverse();
-	Mydblinkedlist.printList();
-	/*cout << "\nLinked List: ";
-	Mydblinkedlist.printList();
-	clsDbLinkedList<int>::Noded * N1 = Mydblinkedlist.Find(2);
-	if (N1 != NULL){
+	cout << "\nAfter inserting: ";
+	Mydblinkedlist.PrintList();
+	Mydblinkedlist.Reverse();
+	cout << "\nAfter reversing: ";
+	Mydblinkedlist.PrintList();
+	cout << "\nLinked List: ";
+	Mydblinkedlist.PrintList();
+	clsDbLinkedList<int>::Noded * N4 = Mydblinkedlist.Find(2);
+	if (N4 != NULL){
 		cout << "\nNode is found";
 	}
 	else{
 		cout << "\nNode Isn't found";
 	}
-	Mydblinkedlist.InsertAfter(N1, 80);
-	cout << "\nAfter inserting 80: ";
-	Mydblinkedlist.printList();
-	Mydblinkedlist.InsertAtEnd(40);
-	cout << "\nAfter inserting 40 at end: ";
-	Mydblinkedlist.printList();
-	clsDbLinkedList<int>::Noded* N2 = Mydblinkedlist.Find(5);
-	Mydblinkedlist.DeleteNode(5);
-	cout << "\nAfter deleting 5 : ";
-	Mydblinkedlist.printList();
-	Mydblinkedlist.DeleteFirstNode();
-	cout << "\nAfter deleting First Node  : ";
-	Mydblinkedlist.printList();
-	Mydblinkedlist.DeleteLastNode();
-	cout << "\nAfter deleting Last Node  : ";
-	Mydblinkedlist.printList();
-	cout << "\nNumber of items: " << Mydblinkedlist.Size();*/
+
+	cout << "\n----------------------------------------------------------\n";
+	clsMyQueue<int> MyQueue;
+	MyQueue.Push(10);
+	MyQueue.Push(20);
+	MyQueue.Push(30);
+	MyQueue.Push(40);
+	MyQueue.Push(50);
+	cout << "\nQueue: ";
+	MyQueue.Print();
+	cout << "\nQueue size: " << MyQueue.Size();
+	cout << "\nQueue front: " << MyQueue.Front();
+	cout << "\nQueue back: " << MyQueue.back();
+	MyQueue.Pop();
+	cout << "\nAfter pop: ";
+	MyQueue.Print();
+
+
 }
+
