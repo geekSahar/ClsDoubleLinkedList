@@ -2,7 +2,8 @@
 //
 #include <iostream>
 
-#include "clsMyQueue.h";
+#include "clsMyQueue.h"
+#include "clsMyStack.h"
 using namespace std;
 int main()
 {
@@ -85,5 +86,40 @@ int main()
 	MyQueue.Clear();
 	cout << "\nAfter clear: ";
 	MyQueue.Print();
+	cout << "\n-----------------------------------------------------------------------------\n";
+	clsMyStack<int> MyStack;
+	MyStack.Push(10);
+	MyStack.Push(20);
+
+	MyStack.Push(30);
+	MyStack.Push(40);
+	MyStack.Push(50);
+	MyStack.Print();
+	cout << "\nStack size: " << MyStack.Size();
+	cout << "\nStack top: " << MyStack.Top();
+	cout << "\nStack bottom: " << MyStack.Bottom();
+	MyStack.Pop();
+	cout << "\nAfter pop: ";
+	MyStack.Print();
+	cout << "\nItem(2): " << MyStack.GetItem(2);
+	MyStack.Reverse();
+	cout << "\nAfter revrsing: ";
+	MyStack.Print();
+	MyStack.UpdateItem(2, 100);
+	cout << "\nAfter Updating: ";
+	MyStack.Print();
+	MyStack.InsertAfter(3, 68);
+	cout << "\nAfter inserting: ";
+	MyStack.Print();
+	MyStack.InsertAtFront(604);
+	cout << "\nAfter inserting at front: ";
+	MyStack.Print();
+	MyStack.InsertAtBack(300);
+	cout << "\nAfter inserting at back: ";
+	MyStack.Print();
+	MyStack.Clear();
+	cout << "\nAfter clear: ";
+	MyStack.Print();
+
 }
 
