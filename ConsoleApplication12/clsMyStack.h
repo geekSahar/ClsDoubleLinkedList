@@ -36,6 +36,7 @@ public:
 	void Reverse() {
 		_list.Reverse();
 	}
+	
 	void UpdateItem(int i, T n) {
 		_list.UpdateItem(i, n);
 	}
