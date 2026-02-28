@@ -2,25 +2,46 @@
 //
 #include <iostream>
 
-#include "clsMyQueue.h"
-#include "clsMyStack.h"
-#include "clsDynamicArray.h"
+
+#include "clsMyQueueArr.h"
 using namespace std;
 int main()
 {
-	clsDynamicArray<int> MyDynamicArray(5);
+	clsMyQueueArr<int> MyQueue;
 
-	MyDynamicArray.SetItem(0, 10);
-	MyDynamicArray.SetItem(1, 20);
-	MyDynamicArray.SetItem(2, 30);
-	MyDynamicArray.SetItem(3, 40);
-	MyDynamicArray.SetItem(4, 50);
-	MyDynamicArray.PrintList();
-	cout << "\nArray Size:" << MyDynamicArray.Size()<<endl;
-	cout << "\nIsEmpty :" << MyDynamicArray.IsEmty()<<endl;
-	
-	
-	MyDynamicArray.DeleteFirstItem();
+	MyQueue.Push(10);
+	MyQueue.Push(20);
+	MyQueue.Push(30);
+	MyQueue.Push(40);
+	MyQueue.Push(50);
+	MyQueue.Print();
+	cout << "\nQueue Size:" << MyQueue.Size()<<endl;
+	cout << "\nIsEmpty :" << MyQueue.IsEmpty()<<endl;
+	cout << "\nQueue Front:" << MyQueue.Front() << endl;
+	cout << "\nQueue Back :" << MyQueue.Back() << endl;
+	 MyQueue.Pop();
+	 cout << "\nQueue after pop :";
+		MyQueue.Print();
+		cout << "\n Item(3) :" << MyQueue.GetItem(3) << endl;
+		MyQueue.Reverse();
+		cout << "\nQueue after reverse :";
+		MyQueue.Print();
+		MyQueue.UpdateItem(2,330);
+		cout << "\nQueue after updating:";
+		MyQueue.Print();
+		MyQueue.InsertAfter(3, 670);
+		cout << "\nQueue after inserting after item(3) :";
+		MyQueue.Print();
+		MyQueue.InsertAtFront(870);
+		cout << "\nQueue after inserting at front :";
+		MyQueue.Print();
+		MyQueue.InsertAtBack(900);
+		cout << "\nQueue after inserting at back :";
+		MyQueue.Print();
+		MyQueue.Clear();
+		cout << "\nQueue after  clear :";
+		MyQueue.Print();
+	/*MyDynamicArray.DeleteFirstItem();
 	cout << "\nArray Size:" << MyDynamicArray.Size() << endl;
 	cout << "\nArray after deleting first item : ";
 	MyDynamicArray.PrintList();

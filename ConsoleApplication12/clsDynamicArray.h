@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+using namespace std;
 template<class T>
 class clsDynamicArray
 {
@@ -9,7 +11,10 @@ public:
 		_n = size;
 		arr = new T[_n];
 	}
-
+	clsDynamicArray() {
+		_n = 0;
+		arr = nullptr;
+	}
 	bool SetItem(int i,T value) {
 		if (i > _n || _n < 0)
 			return false;
@@ -21,7 +26,7 @@ public:
 	}
 	bool IsEmty() {
 		
-		return (_n != 0);
+		return (_n == 0?true:false);
 	}
 	void Resize(int newsize) {
 		if (newsize < 0) {
@@ -76,6 +81,7 @@ public:
 			DeleteItemAt(i);
 		}
 	}
+
 	int  Find(T n){ 
 		for (int i = 0; i < _n ; i++) {
 			if (arr[i] == n)
@@ -99,9 +105,9 @@ public:
 			arrtmp[l++] = arr[i];
 			
 	}
-	if (j == _n) {
+	if (j == _n) 
 		arrtmp[_n] = n;
-	}
+	
 		delete[] arr;
 		_n = size;
 		arr = arrtmp;
