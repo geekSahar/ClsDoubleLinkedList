@@ -70,6 +70,67 @@ public:
 	void DeleteLastItem() {
 		DeleteItemAt(_n-1);
 	}
+	void DeleteItem(T n) {
+		int i = Find( n);
+		if (i != -1) {
+			DeleteItemAt(i);
+		}
+	}
+	int  Find(T n){ 
+		for (int i = 0; i < _n ; i++) {
+			if (arr[i] == n)
+				return i;
+		}
+		return -1;
+	}
+	void InsertAt(int j, T n) {
+		if (j<0 || j>_n)
+			return;
+		int size = _n + 1;
+	T* arrtmp = new T[size];
+	int l=0;
+	for (int i = 0; i < _n; i++) {
+		
+		if (i == j) {
+
+			arrtmp[l++] = n;
+			
+		}
+			arrtmp[l++] = arr[i];
+			
+	}
+	if (j == _n) {
+		arrtmp[_n] = n;
+	}
+		delete[] arr;
+		_n = size;
+		arr = arrtmp;
+
+	}
+	void  InsertAtBegenning(T n ) {
+		InsertAt(0, n);
+
+	}
+	void InsertBefore(int i,T n){
+		if (i < 1) {
+			InsertAt(0, n);
+		}
+		else {
+			InsertAt(i - 1, n);
+		}
+	}
+	void InsertAfter(int i, T n) {
+		if (i >=_n) {
+			InsertAt(_n-1,n);
+		}
+		else {
+			InsertAt(i + 1, n);
+		}
+	}
+	void  InsertAtEnd(T n) {
+		InsertAt(_n, n);
+
+	}
 	void Clear() {
 		if (arr != nullptr) {
 			delete[] arr;
