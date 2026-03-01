@@ -7,7 +7,7 @@ class clsMyQueue
 {
 protected:
 
-	clsDbLinkedList<int> _list;
+	clsDbLinkedList<T> _list;
 public:
 	void Push(T n) {
 		
